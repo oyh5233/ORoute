@@ -5,21 +5,16 @@ package main
 //	"github.com/oyh5233/olog"
 
 const (
-	MaxNumber = 10000000
+	MaxNodesCount = 1000
 )
 
 type Route struct {
-	Nodes [MaxNumber]*Node
+	Nodes [MaxNodesCount]*Node
 }
 
-func (r *Route) Start() {
-	//reinit all Nodes
+func (r *Route) New() {
 	for i := 0; i < MaxNumber; i++ {
-		n := Node{conn: make(map[Resource]Ip)}
+		n := Node.New()
 		r.Nodes[i] = &n
 	}
-}
-
-func (r *Route) Stop() {
-
 }
